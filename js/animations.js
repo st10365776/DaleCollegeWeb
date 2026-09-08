@@ -19,7 +19,13 @@ window.addEventListener("load", () => {
         document.getElementById("loader-percent");
 
 
-    const timeline = gsap.timeline();
+    if (!loader || !counter) return;
+
+    const timeline = gsap.timeline({
+        defaults: {
+            ease: "power3.out"
+        }
+    });
 
 
     const loaderObject = {
@@ -31,7 +37,7 @@ window.addEventListener("load", () => {
         loaderObject,
         {
             value: 100,
-            duration: 1.8,
+            duration: 2.2,
 
             ease: "power2.out",
 
@@ -51,10 +57,10 @@ window.addEventListener("load", () => {
         {
             opacity: 1,
             scale: 1,
-            duration: .8,
-            ease: "power3.out"
+            y: 0,
+            duration: .9
         },
-        "-=1"
+        "-=1.55"
     );
 
 
@@ -63,9 +69,9 @@ window.addEventListener("load", () => {
         {
             opacity: 1,
             y: 0,
-            duration: .6
+            duration: .7
         },
-        "-=.4"
+        "-=.55"
     );
 
 
@@ -73,9 +79,10 @@ window.addEventListener("load", () => {
         ".loader-line",
         {
             width: 100,
-            duration: .6
+            duration: .7,
+            ease: "power2.inOut"
         },
-        "-=.3"
+        "-=.35"
     );
 
 
@@ -83,9 +90,22 @@ window.addEventListener("load", () => {
         ".loader-motto",
         {
             opacity: 1,
-            duration: .5
+            y: 0,
+            duration: .6
         },
-        "-=.3"
+        "-=.35"
+    );
+
+
+    timeline.to(
+        ".loader-content",
+        {
+            y: -18,
+            opacity: 0,
+            duration: .55,
+            ease: "power2.in"
+        },
+        "+=.15"
     );
 
 
@@ -99,7 +119,12 @@ window.addEventListener("load", () => {
 
             ease: "power4.inOut",
 
-            delay: .4
+            delay: .05,
+
+            onComplete: () => {
+                loader.style.visibility = "hidden";
+                loader.style.pointerEvents = "none";
+            }
 
         }
     );

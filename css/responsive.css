@@ -148,7 +148,22 @@
 
     .hero-title {
 
-        font-size: 31vw;
+        font-size: clamp(
+            54px,
+            16vw,
+            92px
+        );
+
+        line-height: .86;
+
+        letter-spacing: -.035em;
+
+    }
+
+
+    .hero-title-wrapper {
+
+        padding-inline: 0;
 
     }
 

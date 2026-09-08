@@ -71,6 +71,10 @@
 
     text-align: center;
 
+    width: min(100%, 980px);
+
+    padding-inline: 20px;
+
 }
 
 
@@ -92,14 +96,18 @@
 .hero-title {
 
     font-size: clamp(
-        110px,
-        20vw,
-        250px
+        64px,
+        11vw,
+        150px
     );
 
-    line-height: .72;
+    line-height: .84;
 
-    letter-spacing: -.07em;
+    letter-spacing: -.045em;
+
+    text-wrap: balance;
+
+    max-width: 100%;
 
 }
 
@@ -112,7 +120,7 @@
 
     justify-content: space-between;
 
-    margin-top: 45px;
+    margin-top: 30px;
 
     border-top: 1px solid var(--border);
 

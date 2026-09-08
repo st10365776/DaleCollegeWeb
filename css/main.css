@@ -231,6 +231,8 @@ section {
 
 .section-number {
 
+    display: none;
+
     font-family: var(--font-display);
 
     font-size: 12px;
@@ -293,6 +295,10 @@ h2 span {
 
     justify-content: center;
 
+    clip-path: inset(0 0 0 0);
+
+    will-change: clip-path;
+
 }
 
 
@@ -304,6 +310,8 @@ h2 span {
 
     align-items: center;
 
+    will-change: transform, opacity;
+
 }
 
 
@@ -312,6 +320,10 @@ h2 span {
     width: 130px;
 
     opacity: 0;
+
+    transform: translateY(24px) scale(.82);
+
+    will-change: transform, opacity;
 
 }
 
@@ -328,6 +340,10 @@ h2 span {
 
     opacity: 0;
 
+    transform: translateY(18px);
+
+    will-change: transform, opacity;
+
 }
 
 
@@ -340,6 +356,8 @@ h2 span {
     background: var(--red);
 
     margin: 18px 0;
+
+    will-change: width;
 
 }
 
@@ -355,6 +373,10 @@ h2 span {
     color: var(--yellow);
 
     opacity: 0;
+
+    transform: translateY(10px);
+
+    will-change: transform, opacity;
 
 }
 
