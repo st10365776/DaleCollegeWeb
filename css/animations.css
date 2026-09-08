@@ -1,0 +1,173 @@
+/* =========================================
+   ANIMATION STATES
+========================================= */
+
+.hero-crest,
+.hero-title,
+.hero-small,
+.hero-motto,
+.hero-established,
+.hero-scroll {
+
+    will-change: transform, opacity;
+
+}
+
+
+/* HERO GLOW */
+
+.hero-crest {
+
+    animation:
+        crestFloat 6s ease-in-out infinite;
+
+}
+
+
+@keyframes crestFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* SCROLL LINE */
+
+.scroll-line {
+
+    animation:
+        scrollPulse 2s ease-in-out infinite;
+
+}
+
+
+@keyframes scrollPulse {
+
+    0% {
+        transform: scaleY(.3);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(.3);
+        transform-origin: bottom;
+    }
+
+}
+
+
+/* CARD HOVER */
+
+.experience-card {
+
+    transition:
+        transform .6s var(--ease),
+        box-shadow .6s var(--ease);
+
+}
+
+
+.experience-card:hover {
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+
+}
+
+
+/* BUTTON ARROW */
+
+.line-button .button-arrow,
+.match-button span,
+.primary-button span,
+.secondary-button span {
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+
+.line-button:hover .button-arrow,
+.match-button:hover span,
+.primary-button:hover span,
+.secondary-button:hover span {
+
+    transform:
+        translate(5px,-5px);
+
+}
+
+
+/* NOISE */
+
+.hero-noise {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .035;
+
+    pointer-events: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+
+}
+
+
+/* RED GLOW */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    filter: blur(180px);
+
+    opacity: .04;
+
+    pointer-events: none;
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
+
+    }
+
+}

@@ -1,0 +1,393 @@
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .experience-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .card-large {
+
+        grid-column: span 2;
+
+    }
+
+
+    .experience-card {
+
+        min-height: 500px;
+
+    }
+
+
+    .heritage-crest {
+
+        width: 400px;
+
+        right: -150px;
+
+    }
+
+
+    .footer-top {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero-content,
+    .intro-content,
+    .experience,
+    .sport,
+    .heritage,
+    .admissions,
+    .site-footer {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .site-header {
+
+        padding: 0 20px;
+
+        height: 75px;
+
+    }
+
+
+    .established {
+
+        display: none;
+
+    }
+
+
+    .brand-name {
+
+        font-size: 19px;
+
+    }
+
+
+    .brand-mark {
+
+        width: 31px;
+        height: 31px;
+
+    }
+
+
+    .menu-toggle {
+
+        width: 43px;
+        height: 43px;
+
+    }
+
+
+    .hero {
+
+        min-height: 650px;
+
+    }
+
+
+    .hero-crest {
+
+        width: 145px;
+
+    }
+
+
+    .hero-small {
+
+        font-size: 9px;
+
+    }
+
+
+    .hero-title {
+
+        font-size: 31vw;
+
+    }
+
+
+    .hero-bottom {
+
+        margin-top: 30px;
+
+    }
+
+
+    .hero-motto,
+    .hero-established {
+
+        font-size: 8px;
+
+    }
+
+
+    .hero-side-text {
+
+        display: none;
+
+    }
+
+
+    .hero-scroll {
+
+        bottom: 20px;
+
+    }
+
+
+    h2 {
+
+        font-size: clamp(
+            55px,
+            16vw,
+            90px
+        );
+
+    }
+
+
+    .intro {
+
+        padding: 100px 0;
+
+        min-height: 750px;
+
+    }
+
+
+    .intro-description {
+
+        font-size: 16px;
+
+        margin-top: 35px;
+
+    }
+
+
+    .intro-year {
+
+        right: 20px;
+
+        bottom: 25px;
+
+    }
+
+
+    .experience {
+
+        padding: 100px 0;
+
+    }
+
+
+    .experience-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        margin-top: 50px;
+
+    }
+
+
+    .experience-card,
+    .card-large {
+
+        min-height: 500px;
+
+    }
+
+
+    .sport {
+
+        padding: 100px 0;
+
+    }
+
+
+    .match-card {
+
+        margin-top: 50px;
+
+        padding: 25px;
+
+    }
+
+
+    .teams {
+
+        gap: 10px;
+
+        margin: 40px 0;
+
+    }
+
+
+    .team {
+
+        font-size: 16vw;
+
+    }
+
+
+    .vs {
+
+        font-size: 12px;
+
+    }
+
+
+    .heritage {
+
+        padding: 100px 0;
+
+        min-height: 750px;
+
+    }
+
+
+    .heritage-crest {
+
+        width: 350px;
+
+        right: -130px;
+
+        bottom: -30px;
+
+    }
+
+
+    .admissions {
+
+        min-height: 700px;
+
+        padding: 100px 20px;
+
+    }
+
+
+    .admission-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .primary-button,
+    .secondary-button {
+
+        justify-content: center;
+
+    }
+
+
+    .footer-top {
+
+        padding-bottom: 40px;
+
+    }
+
+
+    .footer-links {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+
+    .menu-inner {
+
+        width: calc(100% - 40px);
+
+        padding: 110px 0 30px;
+
+    }
+
+
+    .menu-top span:last-child {
+
+        display: none;
+
+    }
+
+
+    .menu-link {
+
+        gap: 15px;
+
+    }
+
+
+    .menu-title {
+
+        font-size: 14vw;
+
+    }
+
+
+    .menu-number {
+
+        width: 20px;
+
+        font-size: 8px;
+
+    }
+
+
+    .menu-bottom {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .menu-background-number {
+
+        font-size: 300px;
+
+    }
+
+
+}
