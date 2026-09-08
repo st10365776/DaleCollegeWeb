@@ -13,11 +13,13 @@
 
     background:
 
-        radial-gradient(
-            circle at center,
-            #171717 0%,
-            #050505 65%
-        );
+        linear-gradient(
+            180deg,
+            rgba(5,5,5,.62) 0%,
+            rgba(5,5,5,.5) 48%,
+            rgba(5,5,5,.78) 100%
+        ),
+        url("../assets/hero.png") center center / cover no-repeat;
 
     display: flex;
 

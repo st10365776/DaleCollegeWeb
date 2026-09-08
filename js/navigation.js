@@ -11,8 +11,36 @@ const fullscreenMenu =
 const menuLinks =
     document.querySelectorAll(".menu-link");
 
+const siteHeader =
+    document.querySelector(".site-header");
+
 
 let menuOpen = false;
+
+
+/* =========================================
+   HEADER MOTION
+========================================= */
+
+if (siteHeader) {
+
+    siteHeader.classList.add("is-visible");
+
+    siteHeader.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 40
+    );
+
+    window.addEventListener("scroll", () => {
+
+        siteHeader.classList.toggle(
+            "is-scrolled",
+            window.scrollY > 40
+        );
+
+    }, { passive: true });
+
+}
 
 
 /* =========================================

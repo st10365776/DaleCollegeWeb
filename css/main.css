@@ -305,7 +305,48 @@ h2 span {
     z-index: 500;
 
     mix-blend-mode: difference;
+    isolation: isolate;
+    transition:
+        height .6s var(--ease),
+        padding .6s var(--ease),
+        background .6s ease,
+        mix-blend-mode .6s ease;
 
+}
+.site-header::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        var(--red),
+        transparent 35%,
+        transparent 65%,
+        var(--yellow)
+    );
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1s var(--ease);
+}
+
+.site-header.is-visible::before {
+    transform: scaleX(1);
+}
+
+.site-header.is-scrolled {
+    height: 70px;
+    padding-inline: 28px;
+    background: rgba(5, 5, 5, .72);
+    backdrop-filter: blur(14px);
+    mix-blend-mode: normal;
+}
+
+.site-header.is-scrolled::before {
+    left: 28px;
+    right: 28px;
 }
 
 
@@ -316,7 +357,22 @@ h2 span {
     align-items: center;
 
     gap: 12px;
+    position: relative;
 
+}
+.brand::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: var(--red);
+    transition: width .5s var(--ease);
+}
+
+.brand:hover::after {
+    width: 100%;
 }
 
 
@@ -336,7 +392,35 @@ h2 span {
     font-family: var(--font-display);
 
     font-size: 18px;
+    opacity: 0;
+    transform: translateY(-14px) rotate(-18deg);
+    transition:
+        opacity .6s var(--ease),
+        transform .6s var(--ease),
+        background .3s ease,
+        color .3s ease;
 
+}
+.site-header.is-visible .brand-mark {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+.site-header.is-visible .brand-mark:nth-child(2) {
+    transition-delay: .06s;
+}
+
+.site-header.is-visible .brand-mark:nth-child(3) {
+    transition-delay: .12s;
+}
+
+.site-header.is-visible .brand-mark:nth-child(4) {
+    transition-delay: .18s;
+}
+
+.brand:hover .brand-mark {
+    background: var(--red);
+    color: white;
 }
 
 
@@ -347,7 +431,16 @@ h2 span {
     font-size: 22px;
 
     letter-spacing: .12em;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition:
+        opacity .7s .2s var(--ease),
+        transform .7s .2s var(--ease);
 
+}
+.site-header.is-visible .brand-name {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 
@@ -369,7 +462,14 @@ h2 span {
     font-size: 11px;
 
     letter-spacing: .2em;
+    transition:
+        opacity .5s var(--ease),
+        transform .5s var(--ease);
 
+}
+.site-header:not(.is-visible) .established {
+    opacity: 0;
+    transform: translateX(12px);
 }
 
 
@@ -391,7 +491,16 @@ h2 span {
     justify-content: center;
 
     gap: 5px;
+    transition:
+        transform .5s var(--ease),
+        background .3s ease,
+        border-color .3s ease;
 
+}
+.menu-toggle:hover {
+    transform: rotate(12deg);
+    background: var(--red);
+    border-color: var(--red);
 }
 
 

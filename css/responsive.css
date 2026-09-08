@@ -72,6 +72,29 @@
     }
 
 
+    .site-header::before {
+
+        left: 20px;
+        right: 20px;
+
+    }
+
+
+    .site-header.is-scrolled {
+
+        padding-inline: 18px;
+
+    }
+
+
+    .site-header.is-scrolled::before {
+
+        left: 18px;
+        right: 18px;
+
+    }
+
+
     .established {
 
         display: none;
