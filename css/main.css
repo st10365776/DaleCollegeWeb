@@ -68,6 +68,64 @@ a {
 }
 
 
+.social-brush {
+    position: relative;
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+    transform: rotate(-7deg);
+}
+
+
+.social-brush::before,
+.social-brush::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border: 1.5px solid currentColor;
+    border-radius: 6px 4px 7px 3px;
+}
+
+
+.social-brush::after {
+    inset: 0 3px 3px 0;
+    opacity: .55;
+    transform: rotate(8deg);
+}
+
+
+.social-instagram::after {
+    inset: 7px;
+    border-radius: 50%;
+    box-shadow: 5px -5px 0 -3px currentColor;
+}
+
+
+.social-facebook {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+.social-facebook::before {
+    inset: 1px 4px;
+    border-width: 1px;
+    border-radius: 45% 35% 50% 40%;
+}
+
+
+.social-facebook::after {
+    inset: 0 1px 2px 6px;
+    border-width: 1px;
+    border-radius: 50%;
+}
+
+
 button {
     border: none;
     background: none;

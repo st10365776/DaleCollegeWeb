@@ -176,6 +176,9 @@
 }
 
 .about-social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--black);
     font-family: var(--font-display);
@@ -183,7 +186,7 @@
     letter-spacing: .08em;
 }
 
-.about-social-links span {
+.about-social-links a > span:last-child {
     margin-left: 12px;
 }
 

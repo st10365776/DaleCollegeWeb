@@ -84,7 +84,7 @@
 
     margin-left: .7em;
 
-    color: var(--grey);
+    color: var(--white);
 
 }
 
@@ -94,7 +94,7 @@
     font-size: clamp(
         110px,
         20vw,
-        320px
+        250px
     );
 
     line-height: .72;
@@ -1010,6 +1010,22 @@
 
     color: var(--grey);
 
+}
+
+
+.menu-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    transition:
+        color .3s ease,
+        transform .4s var(--ease);
+}
+
+
+.menu-social:hover {
+    color: var(--red);
+    transform: translateY(-3px) rotate(-1deg);
 }
 
 

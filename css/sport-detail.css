@@ -1,0 +1,217 @@
+.sport-detail-page {
+    background: var(--black);
+}
+
+.sport-detail-hero {
+    min-height: 72vh;
+    padding: 170px max(40px, calc((100vw - 1400px) / 2)) 90px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .65fr);
+    gap: 10vw;
+    align-items: end;
+    background: linear-gradient(130deg, #171717, #070707 75%);
+}
+
+.sport-detail-copy h1 {
+    margin-top: 22px;
+    font-size: clamp(90px, 15vw, 220px);
+    line-height: .78;
+}
+
+.sport-detail-copy h1 span {
+    color: var(--red);
+}
+
+.sport-detail-lede {
+    max-width: 430px;
+    margin-top: 42px;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.sport-detail-mark {
+    justify-self: end;
+    color: rgba(255,255,255,.08);
+    font-family: var(--font-display);
+    font-size: clamp(180px, 28vw, 430px);
+    line-height: .65;
+}
+
+.sport-detail-section {
+    padding: 120px max(40px, calc((100vw - 1400px) / 2));
+}
+
+.sport-detail-section.light {
+    color: var(--black);
+    background: var(--white);
+}
+
+.sport-detail-heading {
+    margin-top: 35px;
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 110px);
+    line-height: .86;
+    text-transform: uppercase;
+}
+
+.sport-detail-heading span {
+    color: var(--red);
+}
+
+.detail-table {
+    margin-top: 65px;
+    border-top: 1px solid var(--border);
+}
+
+.light .detail-table {
+    border-color: rgba(0,0,0,.18);
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: .7fr 1fr 1fr .7fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 78px;
+    border-bottom: 1px solid var(--border);
+    color: #aaa;
+    font-size: 13px;
+}
+
+.light .detail-row {
+    color: #555;
+    border-color: rgba(0,0,0,.18);
+}
+
+.detail-row strong,
+.detail-row a {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.light .detail-row strong,
+.light .detail-row a {
+    color: var(--black);
+}
+
+.detail-row a {
+    justify-self: end;
+    color: var(--yellow);
+}
+
+.light .detail-row a {
+    color: var(--red);
+}
+
+.detail-heading {
+    min-height: 42px;
+    color: var(--red);
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: .15em;
+}
+
+.detail-note {
+    margin-top: 24px;
+    color: var(--grey);
+    font-size: 11px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 65px;
+}
+
+.photo-placeholder {
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    padding: 25px;
+    border: 1px dashed rgba(255,255,255,.3);
+    background: #151515;
+    color: #888;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.photo-placeholder:first-child {
+    grid-column: span 2;
+    min-height: 360px;
+}
+
+.photo-placeholder strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--red);
+    font-size: 20px;
+}
+
+@media (max-width: 760px) {
+    .sport-detail-hero,
+    .sport-detail-section {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .sport-detail-hero {
+        min-height: 650px;
+        padding-top: 140px;
+        grid-template-columns: 1fr;
+    }
+
+    .sport-detail-mark {
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+    }
+
+    .sport-detail-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .detail-row {
+        grid-template-columns: 1fr auto;
+        gap: 8px 15px;
+        padding: 15px 0;
+    }
+
+    .detail-row span:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .detail-row span:nth-child(3) {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+    .detail-row a {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .detail-heading {
+        display: none;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 45px;
+    }
+
+    .photo-placeholder,
+    .photo-placeholder:first-child {
+        min-height: 170px;
+        grid-column: auto;
+    }
+}
