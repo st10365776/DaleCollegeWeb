@@ -17,150 +17,81 @@ const siteHeader =
 
 let menuOpen = false;
 
+function initNavigation() {
+    const currentToggle = document.getElementById("menu-toggle");
+    const currentMenu = document.getElementById("fullscreen-menu");
+    const currentLinks = document.querySelectorAll(".menu-link");
+    const currentHeader = document.querySelector(".site-header");
 
-/* =========================================
-   HEADER MOTION
-========================================= */
+    if (!currentToggle || !currentMenu || !currentHeader) return;
 
-if (siteHeader) {
-
-    siteHeader.classList.add("is-visible");
-
-    siteHeader.classList.toggle(
-        "is-scrolled",
-        window.scrollY > 40
-    );
+    currentHeader.classList.add("is-visible");
+    currentHeader.classList.toggle("is-scrolled", window.scrollY > 40);
 
     window.addEventListener("scroll", () => {
-
-        siteHeader.classList.toggle(
-            "is-scrolled",
-            window.scrollY > 40
-        );
-
+        currentHeader.classList.toggle("is-scrolled", window.scrollY > 40);
     }, { passive: true });
 
-}
-
-
-/* =========================================
-   OPEN / CLOSE MENU
-========================================= */
-
-menuToggle.addEventListener("click", () => {
-
-    menuOpen = !menuOpen;
-
-    if (menuOpen) {
-
-        openMenu();
-
-    } else {
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* =========================================
-   OPEN
-========================================= */
-
-function openMenu() {
-
-    document.body.classList.add("menu-open");
-
-    menuToggle.classList.add("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-
-    fullscreenMenu.style.visibility = "visible";
-
-
-    gsap.to(fullscreenMenu, {
-
-        clipPath:
-            "inset(0% 0% 0% 0%)",
-
-        duration: .8,
-
-        ease: "power4.inOut"
-
+    currentToggle.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        if (menuOpen) {
+            openMenu(currentToggle, currentMenu);
+        } else {
+            closeMenu(currentToggle, currentMenu);
+        }
     });
 
+    currentLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            closeMenu(currentToggle, currentMenu);
+        });
+    });
+}
+
+function openMenu(currentToggle, currentMenu) {
+    document.body.classList.add("menu-open");
+    currentToggle.classList.add("active");
+    currentToggle.setAttribute("aria-expanded", "true");
+    currentMenu.style.visibility = "visible";
+
+    gsap.to(currentMenu, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: .8,
+        ease: "power4.inOut"
+    });
 
     gsap.fromTo(
         ".menu-link",
-        {
-            y: 80,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: .8,
-            stagger: .08,
-            delay: .25,
-            ease: "power4.out"
-        }
+        { y: 80, opacity: 0 },
+        { y: 0, opacity: 1, duration: .8, stagger: .08, delay: .25, ease: "power4.out" }
     );
-
 }
 
-
-/* =========================================
-   CLOSE
-========================================= */
-
-function closeMenu() {
-
+function closeMenu(currentToggle, currentMenu) {
     document.body.classList.remove("menu-open");
+    currentToggle.classList.remove("active");
+    currentToggle.setAttribute("aria-expanded", "false");
 
-    menuToggle.classList.remove("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-
-    gsap.to(fullscreenMenu, {
-
-        clipPath:
-            "inset(0% 0% 100% 0%)",
-
+    gsap.to(currentMenu, {
+        clipPath: "inset(0% 0% 100% 0%)",
         duration: .7,
-
         ease: "power4.inOut",
-
         onComplete: () => {
-
-            fullscreenMenu.style.visibility =
-                "hidden";
-
+            currentMenu.style.visibility = "hidden";
         }
-
     });
-
 }
 
-
-/* =========================================
-   MENU LINKS
-========================================= */
-
-menuLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        closeMenu();
-
-    });
-
+window.addEventListener("layoutReady", () => {
+    initNavigation();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    initNavigation();
+});
+
+const contentScript = document.createElement("script");
+contentScript.src = window.location.pathname.includes("/sports/")
+    ? "../js/content.js"
+    : "js/content.js";
+document.body.appendChild(contentScript);

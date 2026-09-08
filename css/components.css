@@ -879,6 +879,7 @@
 .footer-brand strong {
 
     font-family: var(--font-display);
+    color: white;
 
     letter-spacing: .1em;
 
@@ -893,7 +894,7 @@
 
     letter-spacing: .2em;
 
-    color: var(--yellow);
+    color: white;
 
 }
 
@@ -921,7 +922,7 @@
 
     letter-spacing: .1em;
 
-    color: var(--grey);
+    color: white;
 
     transition: color .3s ease;
 
@@ -949,7 +950,7 @@
 
     letter-spacing: .15em;
 
-    color: var(--grey);
+    color: white;
 
 }
 

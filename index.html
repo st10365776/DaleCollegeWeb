@@ -71,153 +71,7 @@
          NAVIGATION
     ========================================== -->
 
-    <header class="site-header">
-
-        <a href="#top" class="brand">
-
-            <span class="brand-name">
-                DALE COLLEGE
-            </span>
-
-        </a>
-
-
-        <div class="header-right">
-
-            <span class="established">
-                EST. 1861
-            </span>
-
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================
-         FULLSCREEN MENU
-    ========================================== -->
-
-    <div class="fullscreen-menu" id="fullscreen-menu">
-
-        <div class="menu-inner">
-
-            <div class="menu-top">
-
-                <span>
-                    DALE COLLEGE
-                </span>
-
-                <span>
-                    PER ARDUA AD ASTRA
-                </span>
-
-            </div>
-
-
-            <nav class="main-navigation">
-
-                <a href="about.html" class="menu-link">
-
-                    <span class="menu-number">
-                        01
-                    </span>
-
-                    <span class="menu-title">
-                        The College
-                    </span>
-
-                </a>
-
-
-                <a href="#experience" class="menu-link">
-
-                    <span class="menu-number">
-                        02
-                    </span>
-
-                    <span class="menu-title">
-                        Life at Dale
-                    </span>
-
-                </a>
-
-
-                <a href="sport.html" class="menu-link">
-
-                    <span class="menu-number">
-                        03
-                    </span>
-
-                    <span class="menu-title">
-                        Sport
-                    </span>
-
-                </a>
-
-
-                <a href="#heritage" class="menu-link">
-
-                    <span class="menu-number">
-                        04
-                    </span>
-
-                    <span class="menu-title">
-                        Heritage
-                    </span>
-
-                </a>
-
-
-                <a href="#admissions" class="menu-link">
-
-                    <span class="menu-number">
-                        05
-                    </span>
-
-                    <span class="menu-title">
-                        Admissions
-                    </span>
-
-                </a>
-
-            </nav>
-
-
-            <div class="menu-bottom">
-
-                <a href="https://www.instagram.com/dalecollegeza/" class="menu-social" target="_blank" rel="noopener">
-                    <span class="social-brush social-instagram" aria-hidden="true"></span>
-                    Instagram
-                </a>
-
-                <a href="https://www.facebook.com/DaleCollege" class="menu-social" target="_blank" rel="noopener">
-                    <span class="social-brush social-facebook" aria-hidden="true">f</span>
-                    Facebook
-                </a>
-
-                <a href="#" class="menu-social">
-                    Contact
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
+    <div id="site-header"></div>
     <!-- =========================================
          MAIN
     ========================================== -->
@@ -559,6 +413,29 @@
              HERITAGE
         ====================================== -->
 
+        <section class="news" id="news">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    04 / 05
+                </div>
+
+                <p class="eyebrow">
+                    SCHOOL UPDATES
+                </p>
+
+                <h2>
+                    LATEST
+                    <span>NEWS.</span>
+                </h2>
+
+            </div>
+
+            <div class="news-feed" aria-live="polite"></div>
+
+        </section>
+
         <section class="heritage" id="heritage">
 
             <div class="section-number">
@@ -646,77 +523,8 @@
          FOOTER
     ========================================== -->
 
-    <footer class="site-footer">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <img
-                    src="assets/logo.png"
-                    alt="Dale College"
-                >
-
-                <div>
-                    <strong>
-                        DALE COLLEGE
-                    </strong>
-
-                    <span>
-                        PER ARDUA AD ASTRA
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="about.html">
-                    The College
-                </a>
-
-                <a href="#">
-                    Academics
-                </a>
-
-                <a href="sport.html">
-                    Sport
-                </a>
-
-                <a href="#">
-                    Culture
-                </a>
-
-                <a href="#">
-                    Admissions
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 Dale College
-            </span>
-
-            <span>
-                EST. 1861
-            </span>
-
-            <span>
-                PER ARDUA AD ASTRA
-            </span>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================
+    <div id="site-footer"></div>
+<!-- =========================================
          GSAP
     ========================================== -->
 
@@ -728,6 +536,7 @@
     <!-- JavaScript -->
 
     <script src="js/main.js"></script>
+    <script src="js/site-layout.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
 
