@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>News | Dale College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page">
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-mark">DC</span>
+                <div>
+                    <strong>Dale College</strong>
+                    <small>Content desk</small>
+                </div>
+            </div>
+
+            <nav class="admin-tabs" aria-label="Content sections">
+                <a class="tab-button" href="index.html">Overview</a>
+                <a class="tab-button active" href="news.html">News</a>
+                <a class="tab-button" href="sport.html">Sport</a>
+                <a class="tab-button" href="gallery.html">Gallery</a>
+                <a class="tab-button" href="academics.html">Academics</a>
+                <a class="tab-button" href="admissions.html">Admissions</a>
+                <a class="tab-button" href="contact.html">Contact</a>
+                <a class="tab-button" href="settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <p class="kicker">DALE COLLEGE / CONTENT DESK</p>
+                    <h1>News and announcements</h1>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <span id="admin-current-user" style="font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#5d5853;">Signed in as admin</span>
+                    <a class="back-link" href="../index.html">View site <span>↗</span></a>
+                    <button class="back-link" type="button" data-admin-logout style="background:#fff;">Log out</button>
+                </div>
+            </header>
+
+            <section class="panel-block panel-split">
+                <div>
+                    <div class="panel-head">
+                        <div>
+                            <p class="kicker">01 / ANNOUNCEMENTS</p>
+                            <h2>General news</h2>
+                        </div>
+                    </div>
+                    <form id="announcement-form" class="content-form">
+                        <label>Title<input name="title" required placeholder="School closes early on Friday"></label>
+                        <label>Message<textarea name="body" required rows="3" placeholder="Add the detail families need to know."></textarea></label>
+                        <button type="submit">Publish announcement <span>+</span></button>
+                    </form>
+                    <div id="announcement-list" class="saved-list"></div>
+                </div>
+
+                <div>
+                    <div class="panel-head">
+                        <div>
+                            <p class="kicker">02 / POSTS</p>
+                            <h2>News post</h2>
+                        </div>
+                    </div>
+                    <form id="post-form" class="content-form">
+                        <label>Headline<input name="title" required placeholder="Dale boys step up at nationals"></label>
+                        <label>Sport or category<select name="sport"><option value="general">General</option><option value="rugby">Rugby</option><option value="hockey">Hockey</option><option value="cricket">Cricket</option><option value="athletics">Athletics</option><option value="cross-country">Cross Country</option><option value="chess">Chess</option><option value="debating">Debating</option><option value="choir">Choir</option></select></label>
+                        <label>Post copy<textarea name="body" required rows="4" placeholder="Write a short update..."></textarea></label>
+                        <button type="submit">Save post <span>+</span></button>
+                    </form>
+                    <div id="post-list" class="saved-list"></div>
+                </div>
+            </section>
+
+            <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </main>
+    </div>
+
+    <script src="../js/content.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

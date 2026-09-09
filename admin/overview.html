@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Overview | Dale College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page">
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-mark">DC</span>
+                <div>
+                    <strong>Dale College</strong>
+                    <small>Content desk</small>
+                </div>
+            </div>
+
+            <nav class="admin-tabs" aria-label="Content sections">
+                <a class="tab-button active" href="index.html">Overview</a>
+                <a class="tab-button" href="news.html">News</a>
+                <a class="tab-button" href="sport.html">Sport</a>
+                <a class="tab-button" href="gallery.html">Gallery</a>
+                <a class="tab-button" href="academics.html">Academics</a>
+                <a class="tab-button" href="admissions.html">Admissions</a>
+                <a class="tab-button" href="contact.html">Contact</a>
+                <a class="tab-button" href="settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <p class="kicker">DALE COLLEGE / CONTENT DESK</p>
+                    <h1>Keep the school story current.</h1>
+                </div>
+                <a class="back-link" href="../index.html">View site <span>↗</span></a>
+            </header>
+
+            <section class="panel-block">
+                <div class="summary-grid">
+                    <article class="summary-card">
+                        <span>Announcements</span>
+                        <strong id="summary-announcements">0</strong>
+                    </article>
+                    <article class="summary-card">
+                        <span>News posts</span>
+                        <strong id="summary-posts">0</strong>
+                    </article>
+                    <article class="summary-card">
+                        <span>Fixtures</span>
+                        <strong id="summary-fixtures">0</strong>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel-block">
+                <div class="panel-head">
+                    <div>
+                        <p class="kicker">QUICK OVERVIEW</p>
+                        <h2>What is ready to publish?</h2>
+                    </div>
+                </div>
+                <div class="placeholder-grid">
+                    <article class="placeholder-item">
+                        <span class="badge">News</span>
+                        <h3>Announcements and posts</h3>
+                        <p>Ready for future social, newsletter, and homepage rollouts.</p>
+                    </article>
+                    <article class="placeholder-item">
+                        <span class="badge">Sport</span>
+                        <h3>Fixture and result board</h3>
+                        <p>Prepared for season updates, match reports, and rivalry coverage.</p>
+                    </article>
+                    <article class="placeholder-item">
+                        <span class="badge">Future</span>
+                        <h3>Academics, culture, and admissions</h3>
+                        <p>Sections are listed here for later connection when the rest of the site is expanded.</p>
+                    </article>
+                </div>
+            </section>
+
+            <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </main>
+    </div>
+
+    <script src="../js/content.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

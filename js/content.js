@@ -1,7 +1,18 @@
 /* Dale College local content store and public renderers. */
 (function () {
     const storageKey = "daleCollegeContent";
-    const sports = ["rugby", "hockey", "cricket", "athletics", "swimming", "tennis", "cross-country", "chess"];
+    const sports = ["rugby", "hockey", "cricket", "athletics", "cross-country", "chess", "debating", "choir"];
+
+    const sportLabels = {
+        rugby: "Rugby",
+        hockey: "Hockey",
+        cricket: "Cricket",
+        athletics: "Athletics",
+        "cross-country": "Cross Country",
+        chess: "Chess",
+        debating: "Debating",
+        choir: "Choir"
+    };
 
     const defaultContent = {
         announcements: [],
@@ -57,6 +68,18 @@
         return match ? match[1] : "";
     }
 
+    function renderSportNav() {
+        const hero = document.querySelector(".sport-detail-hero");
+        const currentSport = sportFromPath();
+        if (!hero || !currentSport || hero.querySelector(".sport-detail-nav")) return;
+
+        const nav = document.createElement("nav");
+        nav.className = "sport-detail-nav";
+        nav.setAttribute("aria-label", "Sport pages");
+        nav.innerHTML = sports.map(sport => `<a href="${sport}.html"${sport === currentSport ? ' class="active" aria-current="page"' : ""}>${sportLabels[sport]}</a>`).join("");
+        hero.appendChild(nav);
+    }
+
     function renderAnnouncement() {
         const announcement = getContent().announcements.find(item => item.published !== false);
         if (!announcement || document.querySelector(".live-announcement")) return;
@@ -104,12 +127,42 @@
         board.innerHTML = `<article class="fixture-feature"><div class="fixture-meta"><span>${escapeHtml(featured.sport.replaceAll("-", " ").toUpperCase())} FIXTURE</span><strong>${escapeHtml(formatDate(featured.date))}</strong></div><div class="fixture-teams"><span>DALE</span><b>VS</b><span>${escapeHtml(featured.opposition)}</span></div><p>${escapeHtml(featured.venue)} / ${escapeHtml(featured.team)}</p><a href="${escapeHtml(featured.link || "https://www.instagram.com/dalecollegeza/")}" target="_blank" rel="noopener" class="fixture-link">${escapeHtml(featured.status || "Fixture details")} <span>↗</span></a></article><div class="fixture-list">${remaining.map(fixture => `<div class="fixture-row"><span>${escapeHtml(fixture.sport.replaceAll("-", " ").toUpperCase())}</span><strong>${escapeHtml(fixture.opposition)}</strong><small>${escapeHtml(formatDate(fixture.date))}</small></div>`).join("")}</div>`;
     }
 
+    function renderUpcomingFixtures() {
+        const list = document.querySelector(".upcoming-fixtures-list");
+        if (!list) return;
+        const today = new Date();
+        const fortnight = new Date(today);
+        fortnight.setDate(today.getDate() + 14);
+        const fixtures = sports.flatMap(sport => (getContent().fixtures[sport] || []).map(fixture => ({ ...fixture, sport })))
+            .filter(fixture => {
+                const date = new Date(`${fixture.date}T12:00:00`);
+                return !Number.isNaN(date.getTime()) && date >= today && date <= fortnight;
+            }).slice(0, 4);
+        const fallback = [
+            { sport: "rugby", date: "2026-09-12", opposition: "Queen's College", venue: "Home", team: "1st XV" },
+            { sport: "hockey", date: "2026-09-16", opposition: "Selborne College", venue: "Away", team: "1st XI" },
+            { sport: "debating", date: "2026-09-19", opposition: "Eastern Cape Schools", venue: "Dale Hall", team: "Senior team" }
+        ];
+        const visibleFixtures = fixtures.length ? fixtures : fallback;
+        list.innerHTML = visibleFixtures.map(fixture => `<article class="upcoming-fixture"><div><span>${escapeHtml(formatDate(fixture.date))}</span><strong>${escapeHtml(fixture.sport.replaceAll("-", " ").toUpperCase())}</strong></div><p><b>DALE</b> <em>vs</em> ${escapeHtml(fixture.opposition)}</p><small>${escapeHtml(fixture.venue)} / ${escapeHtml(fixture.team)}</small></article>`).join("");
+    }
+
     window.DaleContent = { getContent, saveContent, sports, formatDate };
 
-    document.addEventListener("DOMContentLoaded", () => {
+    function initializeContent() {
+        if (window.__daleContentInitialized) return;
+        window.__daleContentInitialized = true;
         renderAnnouncement();
         renderPosts();
+        renderSportNav();
         renderSportFixtures();
         renderLandingFixtures();
-    });
+        renderUpcomingFixtures();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializeContent);
+    } else {
+        initializeContent();
+    }
 }());

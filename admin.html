@@ -27,7 +27,6 @@
                 <button class="tab-button" type="button" data-tab="sport">Sport</button>
                 <button class="tab-button" type="button" data-tab="gallery">Gallery</button>
                 <button class="tab-button" type="button" data-tab="academics">Academics</button>
-                <button class="tab-button" type="button" data-tab="heritage">Heritage</button>
                 <button class="tab-button" type="button" data-tab="admissions">Admissions</button>
                 <button class="tab-button" type="button" data-tab="contact">Contact</button>
                 <button class="tab-button" type="button" data-tab="settings">Settings</button>
@@ -40,7 +39,7 @@
                     <p class="kicker">DALE COLLEGE / CONTENT DESK</p>
                     <h1>Keep the school story current.</h1>
                 </div>
-                <a class="back-link" href="index.html">View site <span>↗</span></a>
+                <a class="back-link" href="https://www.dalecollege.co.za" target="_blank" rel="noopener noreferrer">View site <span>↗</span></a>
             </header>
 
             <section class="tab-panel active" id="overview">
@@ -112,7 +111,7 @@
                         </div>
                         <form id="post-form" class="content-form">
                             <label>Headline<input name="title" required placeholder="Dale boys step up at nationals"></label>
-                            <label>Sport or category<select name="sport"><option value="general">General</option><option value="rugby">Rugby</option><option value="hockey">Hockey</option><option value="cricket">Cricket</option><option value="athletics">Athletics</option><option value="swimming">Swimming</option><option value="tennis">Tennis</option><option value="cross-country">Cross Country</option><option value="chess">Chess</option></select></label>
+                            <label>Sport or category<select name="sport"><option value="general">General</option><option value="rugby">Rugby</option><option value="hockey">Hockey</option><option value="cricket">Cricket</option><option value="athletics">Athletics</option><option value="cross-country">Cross Country</option><option value="chess">Chess</option><option value="debating">Debating</option><option value="choir">Choir</option></select></label>
                             <label>Post copy<textarea name="body" required rows="4" placeholder="Write a short update..."></textarea></label>
                             <button type="submit">Save post <span>+</span></button>
                         </form>
@@ -130,7 +129,7 @@
                         </div>
                     </div>
                     <form id="fixture-form" class="content-form fixture-form">
-                        <label>Sport<select name="sport" required><option value="rugby">Rugby</option><option value="hockey">Hockey</option><option value="cricket">Cricket</option><option value="athletics">Athletics</option><option value="swimming">Swimming</option><option value="tennis">Tennis</option><option value="cross-country">Cross Country</option><option value="chess">Chess</option></select></label>
+                        <label>Sport<select name="sport" required><option value="rugby">Rugby</option><option value="hockey">Hockey</option><option value="cricket">Cricket</option><option value="athletics">Athletics</option><option value="cross-country">Cross Country</option><option value="chess">Chess</option><option value="debating">Debating</option><option value="choir">Choir</option></select></label>
                         <label>Date<input type="date" name="date" required></label>
                         <label>Opposition<input name="opposition" required placeholder="Queen's College"></label>
                         <label>Venue<input name="venue" required placeholder="Home"></label>
@@ -169,21 +168,6 @@
                     <div class="placeholder-box">
                         <h3>Planned for later</h3>
                         <p>Curriculum highlights, subject information, achievements, and academic event updates will be connected here when those pages are ready.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="tab-panel" id="heritage">
-                <div class="panel-block compact-panel">
-                    <div class="panel-head">
-                        <div>
-                            <p class="kicker">06 / HERITAGE</p>
-                            <h2>College story</h2>
-                        </div>
-                    </div>
-                    <div class="placeholder-box">
-                        <h3>Planned for later</h3>
-                        <p>Historical milestones, archive photography, and heritage narratives can be managed once the full story pages are built.</p>
                     </div>
                 </div>
             </section>
@@ -237,7 +221,8 @@
         </main>
     </div>
 
-    <script src="js/content.js"></script>
-    <script src="js/admin.js"></script>
+    <script>
+        window.location.href = "admin/login.html";
+    </script>
 </body>
 </html>

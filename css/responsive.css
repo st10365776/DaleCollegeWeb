@@ -52,14 +52,20 @@
 
     .hero-content,
     .intro-content,
-    .experience,
-    .sport,
-    .heritage,
-    .admissions,
     .site-footer {
 
         width: calc(100% - 40px);
 
+    }
+
+    .experience,
+    .sport,
+    .heritage,
+    .admissions,
+    .news {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
 
@@ -276,6 +282,19 @@
 
     }
 
+    .upcoming-fixture {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .upcoming-fixture small {
+        text-align: left;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
 
     .teams {
 
@@ -352,6 +371,12 @@
 
     }
 
+    .site-footer {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
 
     .footer-links {
 
@@ -367,63 +392,6 @@
         flex-direction: column;
 
         gap: 12px;
-
-    }
-
-
-    .menu-inner {
-
-        width: calc(100% - 40px);
-
-        padding: 110px 0 30px;
-
-    }
-
-
-    .menu-top span:last-child {
-
-        display: none;
-
-    }
-
-
-    .menu-link {
-
-        gap: 15px;
-
-    }
-
-
-    .menu-title {
-
-        font-size: 14vw;
-
-    }
-
-
-    .menu-number {
-
-        width: 20px;
-
-        font-size: 8px;
-
-    }
-
-
-    .menu-bottom {
-
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-        justify-content: flex-start;
-
-    }
-
-
-    .menu-background-number {
-
-        font-size: 300px;
 
     }
 

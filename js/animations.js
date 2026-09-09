@@ -166,17 +166,6 @@ window.addEventListener("load", () => {
 
 
     timeline.from(
-        ".hero-motto, .hero-established",
-        {
-            opacity: 0,
-            y: 20,
-            duration: .6
-        },
-        "-=.4"
-    );
-
-
-    timeline.from(
         ".hero-scroll",
         {
             opacity: 0,
@@ -257,36 +246,6 @@ gsap.from(
         duration: .8,
 
         delay: .2
-
-    }
-);
-
-
-/* =========================================
-   EXPERIENCE CARDS
-========================================= */
-
-gsap.from(
-    ".experience-card",
-    {
-
-        scrollTrigger: {
-
-            trigger: ".experience-grid",
-
-            start: "top 75%"
-
-        },
-
-        y: 100,
-
-        opacity: 0,
-
-        duration: 1,
-
-        stagger: .15,
-
-        ease: "power4.out"
 
     }
 );

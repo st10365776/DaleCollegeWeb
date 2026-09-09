@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Admin Login | Dale College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+    <style>
+        .login-shell {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .login-card {
+            width: min(100%, 460px);
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #e2ddd4;
+            box-shadow: 0 28px 80px rgba(25,25,25,0.08);
+            padding: 30px 28px;
+            border-radius: 18px;
+        }
+
+        .login-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .login-brand .brand-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+        }
+
+        .login-brand strong {
+            display: block;
+            font-size: 14px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .login-card h1 {
+            margin: 0 0 8px;
+            font-family: "Oswald", Arial, sans-serif;
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: .9;
+            text-transform: uppercase;
+        }
+
+        .login-card p {
+            margin: 0 0 22px;
+            color: #5d5853;
+            line-height: 1.6;
+        }
+
+        .login-form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .login-status {
+            min-height: 20px;
+            margin: 0;
+            color: #b6252a;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .login-status.error {
+            color: #b6252a;
+        }
+
+        .login-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .login-back {
+            font-size: 12px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #5d5853;
+        }
+    </style>
+</head>
+<body class="admin-page">
+    <div class="login-shell">
+        <div class="login-card">
+            <div class="login-brand">
+                <span class="brand-mark">DC</span>
+                <div>
+                    <strong>Dale College</strong>
+                    <small>Content desk</small>
+                </div>
+            </div>
+
+            <h1>Admin login</h1>
+            <p>Sign in to manage announcements, posts and sport updates.</p>
+
+            <form id="admin-login-form" class="login-form">
+                <label>Username<input type="text" name="username" placeholder="admin" required></label>
+                <label>Password<input type="password" name="password" placeholder="Enter password" required></label>
+                <button type="submit">Sign in <span>→</span></button>
+            </form>
+
+            <p id="login-status" class="login-status" aria-live="polite"></p>
+            <div class="login-actions">
+                <a class="login-back" href="../index.html">Back to site</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin-auth.js"></script>
+</body>
+</html>

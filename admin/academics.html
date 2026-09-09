@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Academics | Dale College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page">
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-mark">DC</span>
+                <div>
+                    <strong>Dale College</strong>
+                    <small>Content desk</small>
+                </div>
+            </div>
+
+            <nav class="admin-tabs" aria-label="Content sections">
+                <a class="tab-button" href="index.html">Overview</a>
+                <a class="tab-button" href="news.html">News</a>
+                <a class="tab-button" href="sport.html">Sport</a>
+                <a class="tab-button" href="gallery.html">Gallery</a>
+                <a class="tab-button active" href="academics.html">Academics</a>
+                <a class="tab-button" href="admissions.html">Admissions</a>
+                <a class="tab-button" href="contact.html">Contact</a>
+                <a class="tab-button" href="settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <p class="kicker">DALE COLLEGE / CONTENT DESK</p>
+                    <h1>Academic content</h1>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <span id="admin-current-user" style="font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#5d5853;">Signed in as admin</span>
+                    <a class="back-link" href="../index.html">View site <span>↗</span></a>
+                    <button class="back-link" type="button" data-admin-logout style="background:#fff;">Log out</button>
+                </div>
+            </header>
+
+            <section class="panel-block compact-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="kicker">05 / ACADEMICS</p>
+                        <h2>Academic content</h2>
+                    </div>
+                </div>
+                <div class="placeholder-box">
+                    <h3>Planned for later</h3>
+                    <p>Curriculum highlights, subject information, achievements, and academic event updates will be connected here when those pages are ready.</p>
+                </div>
+            </section>
+
+            <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </main>
+    </div>
+
+    <script src="../js/content.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

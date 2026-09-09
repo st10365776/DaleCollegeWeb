@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Admin Dashboard | Dale College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+    <style>
+        .landing-hero { display:grid; grid-template-columns:1.4fr .8fr; gap:24px; align-items:stretch; margin-top:30px; margin-bottom:24px; }
+        .landing-hero-card, .landing-quick-card { background:#fff; border:1px solid #e2ddd4; box-shadow:0 10px 28px rgba(25,25,25,.04); border-radius:18px; padding:28px; }
+        .landing-hero-card { background:linear-gradient(135deg,#fff,#faf8f5); }
+        .landing-hero-card .kicker { margin-bottom:12px; }
+        .landing-hero-card h2 { margin:0 0 14px; font-family:"Oswald", Arial, sans-serif; font-size:clamp(36px,4vw,64px); line-height:.9; text-transform:uppercase; }
+        .landing-hero-card p { max-width:60ch; color:#5d5853; line-height:1.7; }
+        .landing-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+        .landing-button { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:10px; font-family:"Oswald", Arial, sans-serif; letter-spacing:.14em; text-transform:uppercase; border:1px solid #e2ddd4; background:#fff; color:#181818; }
+        .landing-button.primary { background:linear-gradient(135deg, #b6252a, #8b1d22); border-color:transparent; color:#fff; }
+        .quick-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:18px; }
+        .quick-link { display:block; padding:18px 16px; background:#fff; border:1px solid #e2ddd4; border-radius:12px; transition:all .2s ease; }
+        .quick-link:hover { border-color:rgba(182,37,42,.38); transform:translateY(-1px); }
+        .quick-link strong { display:block; margin-bottom:8px; font-family:"Oswald", Arial, sans-serif; font-size:22px; text-transform:uppercase; line-height:1; }
+        .quick-link span { color:#5d5853; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+        @media (max-width:980px) { .landing-hero, .quick-grid { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body class="admin-page">
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-mark">DC</span>
+                <div>
+                    <strong>Dale College</strong>
+                    <small>Content desk</small>
+                </div>
+            </div>
+
+            <nav class="admin-tabs" aria-label="Content sections">
+                <a class="tab-button active" href="index.html">Dashboard</a>
+                <a class="tab-button" href="news.html">News</a>
+                <a class="tab-button" href="sport.html">Sport</a>
+                <a class="tab-button" href="gallery.html">Gallery</a>
+                <a class="tab-button" href="academics.html">Academics</a>
+                <a class="tab-button" href="admissions.html">Admissions</a>
+                <a class="tab-button" href="contact.html">Contact</a>
+                <a class="tab-button" href="settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <p class="kicker">DALE COLLEGE / CONTENT DESK</p>
+                    <h1>Welcome back.</h1>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <span id="admin-current-user" style="font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#5d5853;">Signed in as admin</span>
+                    <a class="back-link" href="../index.html">View site <span>↗</span></a>
+                    <button class="back-link" type="button" data-admin-logout style="background:#fff;">Log out</button>
+                </div>
+            </header>
+
+            <section class="landing-hero">
+                <div class="landing-hero-card">
+                    <p class="kicker">ADMIN OVERVIEW</p>
+                    <h2>Keep Dale's story current.</h2>
+                    <p>Update announcements, keep match fixtures live, and manage the school story from one place. This dashboard gives you a fast overview of what is ready for publishing.</p>
+                    <div class="landing-actions">
+                        <a class="landing-button primary" href="news.html">Manage news</a>
+                        <a class="landing-button" href="sport.html">Update fixtures</a>
+                    </div>
+                </div>
+
+                <div class="landing-quick-card">
+                    <p class="kicker">LIVE SUMMARY</p>
+                    <div class="summary-grid" style="grid-template-columns:1fr; margin:0;">
+                        <article class="summary-card">
+                            <span>Announcements</span>
+                            <strong id="summary-announcements">0</strong>
+                        </article>
+                        <article class="summary-card">
+                            <span>News posts</span>
+                            <strong id="summary-posts">0</strong>
+                        </article>
+                        <article class="summary-card">
+                            <span>Fixtures</span>
+                            <strong id="summary-fixtures">0</strong>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-grid">
+                <a class="quick-link" href="news.html">
+                    <strong>News</strong>
+                    <span>Announcements & posts</span>
+                </a>
+                <a class="quick-link" href="sport.html">
+                    <strong>Sport</strong>
+                    <span>Fixtures & latest results</span>
+                </a>
+                <a class="quick-link" href="settings.html">
+                    <strong>Settings</strong>
+                    <span>Brand & publishing controls</span>
+                </a>
+            </section>
+
+            <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </main>
+    </div>
+
+    <script src="../js/content.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

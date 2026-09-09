@@ -1,0 +1,122 @@
+/* Shared fullscreen navigation */
+
+.fullscreen-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    visibility: hidden;
+    clip-path: inset(0 0 100% 0);
+    background: #172126;
+    color: #fff;
+}
+
+.menu-inner {
+    width: min(calc(100% - 80px), var(--container));
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 130px 0 40px;
+}
+
+.menu-top,
+.menu-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: rgba(255,255,255,.68);
+}
+
+.menu-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    transition: color .3s ease, transform .4s var(--ease);
+}
+
+.menu-social:hover {
+    color: var(--red);
+    transform: translateY(-3px) rotate(-1deg);
+}
+
+.main-navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-link {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+    padding: 8px 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.menu-number {
+    width: 30px;
+    font-family: var(--font-display);
+    font-size: 10px;
+    color: #fff;
+}
+
+.menu-title {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: clamp(50px, 7vw, 110px);
+    line-height: .95;
+    color: #fff !important;
+    transition: color .3s ease, transform .5s var(--ease);
+}
+
+.menu-link:hover .menu-title {
+    color: var(--red);
+    transform: translateX(20px);
+}
+
+.menu-background-number {
+    position: absolute;
+    right: -50px;
+    bottom: -130px;
+    font-family: var(--font-display);
+    font-size: 600px;
+    color: rgba(255,255,255,.06);
+}
+
+@media (max-width: 700px) {
+    .menu-inner {
+        width: calc(100% - 40px);
+        padding: 110px 0 30px;
+    }
+
+    .menu-top span:last-child {
+        display: none;
+    }
+
+    .menu-link {
+        gap: 15px;
+    }
+
+    .menu-title {
+        font-size: 14vw;
+    }
+
+    .menu-number {
+        width: 20px;
+        font-size: 8px;
+    }
+
+    .menu-bottom {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .menu-background-number {
+        font-size: 300px;
+    }
+}

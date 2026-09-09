@@ -5,16 +5,16 @@
 
 :root {
 
-    --black: #050505;
-    --black-soft: #0c0c0c;
-    --black-light: #141414;
+    --black: #172126;
+    --black-soft: #243238;
+    --black-light: #304047;
 
     --red: #c9363d;
     --red-dark: #98262c;
 
     --yellow: #d7c95a;
 
-    --white: #f5f5f2;
+    --white: #f7f5ef;
     --grey: #8b8b8b;
     --grey-dark: #454545;
 
@@ -157,11 +157,6 @@ section {
 
 .hero-content,
 .intro-content,
-.experience,
-.sport,
-.heritage,
-.admissions,
-.news,
 .site-footer {
 
     width: min(
@@ -175,6 +170,9 @@ section {
 
 .news {
     padding: 110px 0 0;
+    width: 100%;
+    padding-right: max(40px, calc((100vw - 1400px) / 2));
+    padding-left: max(40px, calc((100vw - 1400px) / 2));
 }
 
 .news .section-heading {
@@ -285,7 +283,7 @@ h2 span {
 
     inset: 0;
 
-    background: var(--black);
+    background: #000;
 
     z-index: 9999;
 
@@ -423,13 +421,14 @@ h2 span {
 
     z-index: 500;
 
-    mix-blend-mode: difference;
     isolation: isolate;
+    background: rgba(8, 15, 25, 0.9);
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(16px);
     transition:
         height .6s var(--ease),
         padding .6s var(--ease),
-        background .6s ease,
-        mix-blend-mode .6s ease;
+        background .6s ease;
 
 }
 .site-header::before {
@@ -458,7 +457,7 @@ h2 span {
 .site-header.is-scrolled {
     height: 70px;
     padding-inline: 28px;
-    background: rgba(5, 5, 5, .72);
+    background: rgba(14, 22, 26, .9);
     backdrop-filter: blur(14px);
     mix-blend-mode: normal;
 }
@@ -467,6 +466,18 @@ h2 span {
     left: 28px;
     right: 28px;
 }
+
+.home-page .site-header,
+.home-page .site-header.is-scrolled {
+    background: transparent;
+    border-bottom-color: transparent;
+    backdrop-filter: none;
+    background: linear-gradient(180deg, rgba(8,15,25,.9), rgba(8,15,25,.6) 40%, transparent 100%);
+}
+
+/* .home-page .site-header::before {
+    display: none;
+}  */
 
 
 .brand {

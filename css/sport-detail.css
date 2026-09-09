@@ -3,18 +3,45 @@
 }
 
 .sport-detail-hero {
+    position: relative;
     min-height: 72vh;
     padding: 170px max(40px, calc((100vw - 1400px) / 2)) 90px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, .65fr);
     gap: 10vw;
     align-items: end;
-    background: linear-gradient(130deg, #171717, #070707 75%);
+    background: linear-gradient(90deg, rgba(20,31,36,.96), rgba(20,31,36,.68)), url("../assets/dale-sport-DbvCv9JMQuf.jpg") center / cover;
+}
+
+.sport-detail-nav {
+    position: absolute;
+    top: 112px;
+    right: max(40px, calc((100vw - 1400px) / 2));
+    left: max(40px, calc((100vw - 1400px) / 2));
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    padding-bottom: 14px;
+}
+
+.sport-detail-nav a {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.sport-detail-nav a:hover,
+.sport-detail-nav a.active {
+    color: var(--white);
 }
 
 .sport-detail-copy h1 {
     margin-top: 22px;
-    font-size: clamp(90px, 15vw, 220px);
+    font-size: clamp(68px, 10vw, 150px);
     line-height: .78;
 }
 
@@ -30,11 +57,7 @@
 }
 
 .sport-detail-mark {
-    justify-self: end;
-    color: rgba(255,255,255,.08);
-    font-family: var(--font-display);
-    font-size: clamp(180px, 28vw, 430px);
-    line-height: .65;
+    display: none;
 }
 
 .sport-detail-section {
@@ -49,7 +72,7 @@
 .sport-detail-heading {
     margin-top: 35px;
     font-family: var(--font-display);
-    font-size: clamp(52px, 7vw, 110px);
+    font-size: clamp(42px, 5.5vw, 82px);
     line-height: .86;
     text-transform: uppercase;
 }
@@ -59,8 +82,10 @@
 }
 
 .detail-table {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
     margin-top: 65px;
-    border-top: 1px solid var(--border);
 }
 
 .light .detail-table {
@@ -68,19 +93,23 @@
 }
 
 .detail-row {
+    position: relative;
     display: grid;
-    grid-template-columns: .7fr 1fr 1fr .7fr;
+    grid-template-columns: 1fr auto;
     gap: 20px;
     align-items: center;
-    min-height: 78px;
-    border-bottom: 1px solid var(--border);
+    min-height: 132px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, #171717, #0c0c0c);
     color: #aaa;
     font-size: 13px;
 }
 
 .light .detail-row {
     color: #555;
-    border-color: rgba(0,0,0,.18);
+    border-color: rgba(0,0,0,.14);
+    background: linear-gradient(145deg, #fff, #ecece8);
 }
 
 .detail-row strong,
@@ -107,7 +136,42 @@
 }
 
 .detail-heading {
-    min-height: 42px;
+    display: none;
+}
+
+.detail-row:not(.detail-heading) span:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.light .detail-row:not(.detail-heading) span:nth-child(2) {
+    color: var(--black);
+}
+
+.detail-row:not(.detail-heading) span:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.detail-row:not(.detail-heading) a {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.detail-row:not(.detail-heading) strong {
+    color: var(--yellow);
+}
+
+.light .detail-row:not(.detail-heading) strong {
+    color: var(--red);
+}
+
+.detail-heading {
     color: var(--red);
     font-family: var(--font-display);
     font-size: 10px;
@@ -167,6 +231,13 @@
         grid-template-columns: 1fr;
     }
 
+    .sport-detail-nav {
+        top: 92px;
+        right: 25px;
+        left: 25px;
+        gap: 8px 15px;
+    }
+
     .sport-detail-mark {
         position: absolute;
         right: 20px;
@@ -181,22 +252,11 @@
     .detail-row {
         grid-template-columns: 1fr auto;
         gap: 8px 15px;
-        padding: 15px 0;
+        padding: 20px;
     }
 
-    .detail-row span:nth-child(2) {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
-
-    .detail-row span:nth-child(3) {
-        grid-column: 1 / -1;
-        grid-row: 3;
-    }
-
-    .detail-row a {
-        grid-column: 2;
-        grid-row: 1;
+    .detail-table {
+        grid-template-columns: 1fr;
     }
 
     .detail-heading {
